@@ -1,7 +1,7 @@
 ## Part 1: Debugging
 
 my.num <- 6
-initials <- "?. ?."
+initials <- "O. T."
 
 my.vector <- c(my.num, initials)
 
@@ -9,37 +9,50 @@ my.vector <- c(my.num, initials)
 vector.sum <- sum(my.vector)
 
 # Describe why this doesn't work: 
-# 
+# my.vector doesn't work because my.num and intials contain two
+#different data types
 
 install.packages("stringr")
+library("stringr")
 
 my.line <- "Hey, hey, this is the library"
 
 print(str_length(my.line))
 
 # Describe why this doesn't work: 
-# 
+# doesn't work because the library was installed
+#but it was not loaded
 
 said.the.famous <- paste(my.line, " - ", initial)
 
 # Describe why this doesn't work: 
-# 
-
+# this doesn't work because the variable intial is supposed
+#to be initials
 
 ## Part 2 - Vector and function practice
 
 # Make a vector and use typeof to check what type R considers it to be
+vector <- c(1,2,3)
+typeof(vector)
 
 # Write a function `CompareLength` that takes in 2 vectors, and returns the sentence:
 # "The difference in lengths is N"
-
+CompareLength <-function(v4, v3){
+  N <- length(v4)-length(v3)
+  result <- paste("The difference in lengths is ", N)
+  return(result)
+}
 
 # Pass two vectors of different length to your `CompareLength` function
-
+v2 <- c(2,3,4,5,6)
+CompareLength(v2, vector)
 
 # Write a function `DescribeDifference` that will return one of the following statements:
 # "Your first vector is longer by N elements"
 # "Your second vector is longer by N elements"
+DescribeDifference <-function(a, b){
+  difference <-
+}
 
 # Pass two vectors to your `DescribeDifference` function
 
